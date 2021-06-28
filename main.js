@@ -23,15 +23,6 @@ const path = require('path');
  */
 const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
 
-/**
- * Calculate and return the first host IP address from a CIDR subnet.
- * @param {string} cidrStr - The IPv4 subnet expressed
- *                 in CIDR format.
- * @param {callback} callback - A callback function.
- * @returns {object} (firstIpAddress) - Object that returns IP strings for properties ipv4 & ipv6. 
- */
-
-
 class IpAddress {
   constructor() {
     // IAP's global log object is used to output errors, warnings, and other
@@ -41,6 +32,13 @@ class IpAddress {
     // under Documentation -> Developer Guides -> Log Class Guide
     log.info('Starting the IpAddress product.');
   }
+    /**
+     * Calculate and return the first host IP address from a CIDR subnet.
+     * @param {string} cidrStr - The IPv4 subnet expressed
+     *                 in CIDR format.
+     * @param {callback} callback - A callback function.
+     * @returns {object} (firstIpAddress) - Object that returns IP strings for properties ipv4 & ipv6. 
+     */
     getFirstIpAddress(cidrStr, callback) {
         // Initialize return arguments for callback
         let firstIpAddress = {
